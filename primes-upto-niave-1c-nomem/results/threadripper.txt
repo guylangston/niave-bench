@@ -1,0 +1,73 @@
+=============================================
+Linux bramble 5.14.16-arch1-1 #1 SMP PREEMPT Tue, 02 Nov 2021 22:22:59 +0000 x86_64 GNU/Linux
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Address sizes:                   43 bits physical, 48 bits virtual
+Byte Order:                      Little Endian
+CPU(s):                          32
+On-line CPU(s) list:             0-31
+Vendor ID:                       AuthenticAMD
+Model name:                      AMD Ryzen Threadripper 2950X 16-Core Processor
+CPU family:                      23
+Model:                           8
+Thread(s) per core:              2
+Core(s) per socket:              16
+Socket(s):                       1
+Stepping:                        2
+Frequency boost:                 enabled
+CPU max MHz:                     3500.0000
+CPU min MHz:                     2200.0000
+BogoMIPS:                        6989.30
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid amd_dcm aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate ssbd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca sme sev sev_es
+Virtualization:                  AMD-V
+L1d cache:                       512 KiB (16 instances)
+L1i cache:                       1 MiB (16 instances)
+L2 cache:                        8 MiB (16 instances)
+L3 cache:                        32 MiB (4 instances)
+NUMA node(s):                    1
+NUMA node0 CPU(s):               0-31
+Vulnerability Itlb multihit:     Not affected
+Vulnerability L1tf:              Not affected
+Vulnerability Mds:               Not affected
+Vulnerability Meltdown:          Not affected
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Full AMD retpoline, IBPB conditional, STIBP disabled, RSB filling
+Vulnerability Srbds:             Not affected
+Vulnerability Tsx async abort:   Not affected
+---------------------------------------------
+Project (1/4): bench-net31.csproj
+[dotnet] $ dotnet run -c Release --project bench-net31.csproj
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:07.7753811
+
+
+Project (2/4): bench-net50.csproj
+[dotnet] $ dotnet run -c Release --project bench-net50.csproj
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:07.6591976
+
+
+Project (3/4): bench-net60.csproj
+[dotnet] $ dotnet run -c Release --project bench-net60.csproj
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:07.6793530
+
+
+Project (4/4): bench-net6-rtr.csproj
+[dotnet] $ dotnet run -c Release --project bench-net6-rtr.csproj
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:07.6517229
+
+
+[MONO]
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:07.7226682
+
+[gcc]
+[NaivePrimes] count=1000000 lastPrime=15485863
+Complete in 7.596227 sec.
+
+[clang]
+[NaivePrimes] count=1000000 lastPrime=15485863
+Complete in 7.660841 sec.

@@ -1,0 +1,71 @@
+=============================================
+Linux cedar 5.14.16-arch1-1 #1 SMP PREEMPT Tue, 02 Nov 2021 22:22:59 +0000 x86_64 GNU/Linux
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Address sizes:                   39 bits physical, 48 bits virtual
+Byte Order:                      Little Endian
+CPU(s):                          4
+On-line CPU(s) list:             0-3
+Vendor ID:                       GenuineIntel
+Model name:                      Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz
+CPU family:                      6
+Model:                           78
+Thread(s) per core:              2
+Core(s) per socket:              2
+Socket(s):                       1
+Stepping:                        3
+CPU max MHz:                     3000.0000
+CPU min MHz:                     400.0000
+BogoMIPS:                        5001.23
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+L1d cache:                       64 KiB (2 instances)
+L1i cache:                       64 KiB (2 instances)
+L2 cache:                        512 KiB (2 instances)
+L3 cache:                        3 MiB (1 instance)
+NUMA node(s):                    1
+NUMA node0 CPU(s):               0-3
+Vulnerability Itlb multihit:     KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:              Mitigation; PTE Inversion
+Vulnerability Mds:               Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Meltdown:          Mitigation; PTI
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Full generic retpoline, IBPB conditional, IBRS_FW, STIBP conditional, RSB filling
+Vulnerability Srbds:             Mitigation; Microcode
+Vulnerability Tsx async abort:   Mitigation; TSX disabled
+---------------------------------------------
+Project (1/4): bench-net31.csproj
+[dotnet] $ dotnet run -c Release --project bench-net31.csproj
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:05.1407619
+
+
+Project (2/4): bench-net50.csproj
+[dotnet] $ dotnet run -c Release --project bench-net50.csproj
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:05.1376748
+
+
+Project (3/4): bench-net60.csproj
+[dotnet] $ dotnet run -c Release --project bench-net60.csproj
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:05.1515567
+
+
+Project (4/4): bench-net6-rtr.csproj
+[dotnet] $ dotnet run -c Release --project bench-net6-rtr.csproj
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:05.1481587
+
+
+[MONO]
+[NaiveSingleThreadPrimes] Found primes 1,000,000 up to 15,485,863
+Complete: 00:00:07.8026878
+
+[gcc]
+[NaivePrimes] count=1000000 lastPrime=15485863
+Complete in 4.473654 sec.
+
+[clang]
+[NaivePrimes] count=1000000 lastPrime=15485863
+Complete in 4.496549 sec.
