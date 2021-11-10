@@ -1,4 +1,4 @@
-# Trivial 1-million primes
+# Trivial primes up to XXX
 
 This is a trivial benchmark, which finds the first 1-million prime numbers. It uses a trivial (easy to understand), 
 low-memory, single-threaded, imperitive algorythm that lends itself to implementation in multiple languages.
